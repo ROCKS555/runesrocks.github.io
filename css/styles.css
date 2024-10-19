@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width:1400px
+    }
+}
+
+.absolute {
+    position: absolute
+}
+
+.relative {
+    position: relative
+}
+
+#dropZone {
+    transition: background-color 0.3s ease;
+}
+
+#dropZone:hover,
+#dropZone.dragover {
+    background-color: #e0e7ff; /* Un tono de azul claro, puedes ajustarlo según tus preferencias */
+    border-color: #4f46e5; /* Un tono de azul más oscuro para el borde */
+}
+
