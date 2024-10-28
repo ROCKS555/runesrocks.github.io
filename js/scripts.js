@@ -27,9 +27,13 @@ function loadImage(file) {
   reader.onload = (e) => {
     fabric.Image.fromURL(e.target.result, (img) => {
       canvas.clear();
+      const scaleX = canvas.width / img.width;
+      const scaleY = canvas.height / img.height;
+      const scale = Math.max(scaleX, scaleY); // Mantener la relación de aspecto
+      img.scale(scale); // Escalar la imagen
       canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-        scaleX: canvas.width / img.width,
-        scaleY: canvas.height / img.height
+        left: (canvas.width - img.width * scale) / 2, // Centrar la imagen
+        top: (canvas.height - img.height * scale) / 2,
       });
       elements.imageSelector.classList.remove('disabled');
       presentation.classList.add('hidden');
@@ -69,6 +73,7 @@ function downloadCanvas() {
 function resetCanvas() {
   canvas.clear();
   presentation.classList.remove('hidden');
+  elements.fileInput.value = ''; 
   currentSelectorImage = null;
   elements.imageSelector.classList.add('disabled');
 }
@@ -89,8 +94,17 @@ function showWarning() {
         }, 500); // Duración de la animación de desvanecimiento
     }, 3000); // Duración de la advertencia visible
 }
+
 // Event listeners
 function setupEventListeners() {
+
+  canvasContainer.addEventListener('click', (e) => {
+    // Verificar si el input de archivos ya tiene un archivo cargado
+      if (!elements.fileInput.files || elements.fileInput.files.length === 0) {
+        elements.fileInput.click();
+      }
+    });
+
     elements.imageSelector.addEventListener('click', (e) => {
         if (elements.imageSelector.classList.contains('disabled')) {
             showWarning();
