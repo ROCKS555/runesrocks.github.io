@@ -30,12 +30,12 @@
             </ol>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3"style="display: none;">
             <input type="file" class="w-full p-2 border border-gray-300 rounded" id="baseImageUpload" accept="image/*">
         </div>
         <div class="flex flex-col items-center justify-center min-h-screen space-y-4">
             <div id="mainContainer" class="container max-w-2xl p-2 mx-auto">
-                <div class="flex flex-col w-full overflow-hidden border rounded-xl border-slate-300">
+                <div class="flex flex-row w-full overflow-hidden border rounded-xl border-slate-300">
                     <div id="canvasContainer" class="relative w-full overflow-hidden bg-white aspect-square">
                         <div id="imageEditor" class="w-full h-full ">
                             <div id="presentation" role="presentation" tabindex="0" class="flex items-center justify-center w-full h-full p-4 cursor-pointer md:p-16">
@@ -47,7 +47,7 @@
                             <canvas id="canvas" class="pointer-events-auto w-full h-full" width="600" height="400"></canvas>
                         </div>
                     </div>
-                    <div id="imageSelector" class="disabled flex flex-row justify-center w-full p-2 overflow-x-auto bg-gray-100">
+                    <div id="imageSelector" class="flex flex-col justify-start w-1/4 p-2 overflow-y-auto bg-transparent max-h-[500px]">
                         <button id="imageButton" class="flex flex-col items-center mr-3" data-image-src="img/GOLD-1.png">
                             <img src="img/GOLD-1.png" class="object-contain h-16 w-16">
                             <span class="text-sm">Rock</span>
@@ -56,11 +56,73 @@
                             <img src="img/box.png" class="object-contain h-16 w-16">
                             <span class="text-sm">Pets</span>
                         </button>  
+                        <!-- Botones de imagen adicionales -->
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-1.png">
+                            <img src="img/mask-1.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 1</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-2.png">
+                            <img src="img/mask-2.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 2</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-3.png">
+                            <img src="img/mask-3.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 3</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-4.png">
+                            <img src="img/mask-4.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 4</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-5.png">
+                            <img src="img/mask-5.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 5</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-6.png">
+                            <img src="img/mask-6.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 6</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-7.png">
+                            <img src="img/mask-7.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 7</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-8.png">
+                            <img src="img/mask-8.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 8</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-9.png">
+                            <img src="img/mask-9.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 9</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-10.png">
+                            <img src="img/mask-10.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 10</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-11.png">
+                            <img src="img/mask-11.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 11</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-12.png">
+                            <img src="img/mask-12.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 12</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-13.png">
+                            <img src="img/mask-13.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 13</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-14.png">
+                            <img src="img/mask-14.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 14</span>
+                        </button>
+                        <button id="imageButton" class="flex flex-col items-center" data-image-src="img/mask-15.png">
+                            <img src="img/mask-15.png" class="object-contain h-16 w-16">
+                            <span class="text-sm">Mask 15</span>
+                        </button>
                         <input type="file" class="hidden" id="imageSelected" accept="image/*">   
                     </div>
-                    <div id="imageSelectorWarning" class="hidden">
-                        <p>Please load a base image first.</p>
-                    </div>
+                </div>
+
+                <div id="imageSelectorWarning" class="hidden mt-2"> <!-- Movido fuera de la estructura flex y agregado margen superior -->
+                    <p>Please load a base image first.</p>
                 </div>
             </div>
     
